@@ -1,0 +1,53 @@
+Edgar Diaz Zevillanos // 20211602
+
+Explicación  de la Arquitectura en la Nube
+
+	Máquina Virtual (VM)
+
+		Instancia:
+			Nombre: lab10-instance
+			IP Pública: 35.224.130.234 (IP pública permanente)
+
+		Configuración del Sistema Operativo:
+
+			OS: Ubuntu 20.04 (ubuntu-2004-focal-v20240614)
+
+		Software Instalado:
+
+			Java: OpenJDK 17
+			Servidor de Aplicaciones: Apache Tomcat 10.1.25
+
+		Configuración de Tomcat:
+
+			Puerto: 8080
+			Despliegue: El archivo WAR generado desde IntelliJ IDEA se ha desplegado mediante la interfaz del Tomcat Manager (/manager).
+
+		Configuración de Red y Seguridad:
+
+			Firewall: Se han configurado reglas de firewall para permitir el tráfico HTTP/HTTPS, especialmente el puerto 8080 para Tomcat.
+
+		Conectividad con Base de Datos:
+
+			 La VM está configurada para conectarse a la base de datos lab7 en la instancia lab10-mysql mediante una regla de firewall 			 		 específica .
+
+
+
+
+	Base de Datos (Cloud SQL)
+
+		Instancia de Base de Datos:
+
+			Nombre: lab10-mysql
+			IP Pública: 34.139.185.159
+			Base de Datos: lab7
+
+		Configuración y Acceso:
+
+			Software de Gestión: MySQL Workbench 8.0
+			Puerto: 3606
+			Redes Autorizadas: La instancia de MySQL permite conexiones desde:
+
+				La IP pública de la VM (35.224.130.234).
+				La IP de mi red doméstica.
+
+		API Utilizada: La configuración de acceso y redes autorizadas se ha gestionado mediante la API Cloud SQL Admin.
